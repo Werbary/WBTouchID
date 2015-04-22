@@ -13,6 +13,12 @@
 typedef void(^TouchIdCallback)(BOOL success,NSError *err);
 @interface WBTouchID : NSObject
 
+//Returns hardware name ex (iPhone 6,1)
++ (NSString *)hardware;
+
+//Returns YES if device valid for Touch ID
++ (BOOL)isDeviceValid;
+
 //Returns YES if device has Touch ID
 + (BOOL) canUseTouchID;
 
