@@ -39,8 +39,11 @@ NSString *const kWBTouchIdErrorDomain = @"WBTouchIdAuthenticationDomain";
     if (NSClassFromString(@"LAContext") != nil && [self isDeviceValid]) {
         LAContext *context = [[LAContext alloc] init];
         return [context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:NULL];
+    } else if (NSClassFromString(@"LAContext") != nil && ![self isDeviceValid]) {
+        //iOS version support Touch ID Framework but device NO
+        return NO;
     } else {
-        //iOS version not support Touch ID
+        //iOS doesn't support Touch ID framework ;)
         return NO;
     }
 }
