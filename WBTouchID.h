@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define kWBTouchIdReason @"Приложите палец для входа"
+#define kWBTouchIdReason @"Authentication is required to access your data."
 
 typedef void(^TouchIdCallback)(BOOL success,NSError *err);
 @interface WBTouchID : NSObject
